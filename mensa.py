@@ -28,14 +28,14 @@ def food_week():
             day = i.findAll('h3')[0].text
             if 'Samstag' in day:
                 continue
-            print(day)
+            print('\33[91m%s'%day,'\33[0m')
 
             for a in i.contents[1:]:
                 category = a.find('h4').text
                 print('')
                 if 'Abendessen' in category:
                     continue
-                print(category)
+                print('\33[92m%s'%category,'\33[0m')
                 t = a.find('div').findAll(text=True)
                 for i in range(len(t)):
                     l = t[i]
@@ -73,7 +73,7 @@ def food_today():
             print('')
             if 'Abendessen' in category:
                 continue
-            print(category)
+            print('\33[92m%s'%category,'\33[0m')
             t = a.find('div').findAll(text=True)
             for i in range(len(t)):
                 l = t[i]
